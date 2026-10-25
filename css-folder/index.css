@@ -1,0 +1,28 @@
+/* LINE 1: Must be at the absolute top of the file */
+@import url("https://googleapis.com");
+
+/* LINE 2+: Your regular variables and styles go here */
+
+
+:root {
+  color-scheme: dark;
+  background-color: #0B0C10;
+  color: #D2B48C;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Bodoni Moda';
+}
+
+/*add padding to the sides of the video container*/
+.video-holder {
+  padding: 3%;
+}
+
+  /*Make this video take up 100% of its div container */
+video {
+  width: 100%;
+  height: auto;
+}
