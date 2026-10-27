@@ -1,5 +1,5 @@
 /* LINE 1: Must be at the absolute top of the file */
-@import url("https://googleapis.com");
+
 
 /* LINE 2+: Your regular variables and styles go here */
 
@@ -13,7 +13,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Bodoni Moda';
+  font-family: 'Bodoni Moda', 'Times New Roman', Times,  serif;
 }
 
 /*add padding to the sides of the video container*/
@@ -25,4 +25,11 @@ body, html {
 video {
   width: 100%;
   height: auto;
+}
+
+.article-grid {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
 }
