@@ -30,6 +30,19 @@ video {
 .article-grid {
   display: grid;
   column-gap: 2rem;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .article-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.image-track {
+  display: flex;
+  gap: 2rem;
+  pointer-events: none;
+  transition: transform 0.1 ease-out;
 }
