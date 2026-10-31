@@ -27,6 +27,10 @@ video {
   height: auto;
 }
 
+.container-gutter {
+  padding: 2rem;
+}
+
 .article-grid {
   display: grid;
   column-gap: 2rem;
@@ -40,9 +44,22 @@ video {
   }
 }
 
+/*switched from hidden overflow and now want to work on onclick mechanics for dragging/moving between images*/
+/*But how would the animation between moving between the images work? unless their already considered to be there*/
+.layout1 {
+  display: block;
+  overflow: hidden;
+}
+
 .image-track {
   display: flex;
   gap: 2rem;
-  pointer-events: none;
-  transition: transform 0.1 ease-out;
+  box-sizing: border-box;
 }
+
+img {
+  cursor: pointer;
+  display: block;
+  overflow-clip-margin: content-box;
+}
+
