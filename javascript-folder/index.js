@@ -1,4 +1,6 @@
 console.log("Yes i'm working");
+  const myRules = document.styleSheets[0].cssRules;
+  console.log(myRules[0].index.css);
 /* Okay so i need to find a way to enable click-and-drag sliding on this website for the image-track element using javascript WITHOUT cheating*/
 
 //NEW BUG FIXED, you don't need to put dot in front of class declaration in className
@@ -36,7 +38,8 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
     isMoving = true;
     if (isMoving && mousedown) {
       console.log('this is the x value: ' + x);
-
+//how do i used the difference to calculate the new lemon value?: herei it all is
+//one bug , if i start scrolling on the element next to it, the matrix isn't responsive, but that should be fine if i lower the width of element, and take overflow serious, lets finish the css matrix coding first though
     if (x > 0 && x > lemon ) {
       lemon = x;
       }
@@ -49,9 +52,12 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
     }
     console.log(x);
     
-      //so right now ive got the number of total for x but now i need to find a way to setup the backward counter so if lemon has a total and x goes back a certain amount when ive moved back, how do i used the difference to calculate the new lemon value?
-  //step 3.It should go here: based on which way the user scrolls stuff, i should code in a css transformation where i update the css transform, to move positions for a specific amount of space based on teh size of teh image elements present.
-  //new issue is that whenever i get passed an image element the x value restarts, i need to find a way for the value to increaese over the entire imageTrack element and not restart to 0 everytime a pass an image through scrolling  so the matrix transformation will work properly: maybe i could just increment(+=) the value into the martrix value by finding some sort of trigger in teh connections 
+
+  //step 3.It should go somewhere:i should code in a css transformation where i update the css transform, to move positions for a specific amount of space based on teh size of teh image elements present.
+  //how do i single out the css value using dom... i dont see anything that allows dom to be used on css
+  //there was something about window.getComputedStyle that i saw with AI, start there i guess.
+
+
     const matrixValue = -(lemon + x - lemon);
     console.log('this took a long time to get our hands on: ' + matrixValue);
     }
