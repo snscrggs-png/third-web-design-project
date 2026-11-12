@@ -1,12 +1,12 @@
 console.log("Yes i'm working");
-  const myRules = document.styleSheets[0].cssRules;
-  console.log(myRules[0].index.css);
+
 /* Okay so i need to find a way to enable click-and-drag sliding on this website for the image-track element using javascript WITHOUT cheating*/
 
 //NEW BUG FIXED, you don't need to put dot in front of class declaration in className
 
 //step 1: enable the onlcick relationship/event listener
 const imageTrack = document.querySelector('.image-track');
+let xValues = [];
 let isMoving = false;
 let x = 0;
 let y = 0;
@@ -22,6 +22,7 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
     //1. set alternate classes for elements and utillize these classes to change the position of said elements
   imageTrack.className += ' yessir'
   console.log(this.className); 
+  const yessir = document.querySelector('.yessir');
   //2. capture mouse movement from right or left to determine how the animation occurs using "mousemove"
       imageTrack.addEventListener('mouseup', function(e) { 
     isMoving = false;
@@ -42,6 +43,8 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
 //one bug , if i start scrolling on the element next to it, the matrix isn't responsive, but that should be fine if i lower the width of element, and take overflow serious, lets finish the css matrix coding first though
     if (x > 0 && x > lemon ) {
       lemon = x;
+      //push in order to determine first x value and then use it as a refernece point to determine matrix point/ whether its negative or not
+      xValues.push(x);
       }
     if (x < lemon && x > lemon - 100) {
       lemon = x;
@@ -51,6 +54,9 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
     
     }
     console.log(x);
+      const compStyles = window.getComputedStyle(imageTrack);
+  console.log(compStyles.getPropertyValue("transform"));
+  console.log(xValues);
     
 
   //step 3.It should go somewhere:i should code in a css transformation where i update the css transform, to move positions for a specific amount of space based on teh size of teh image elements present.
@@ -71,7 +77,7 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
     imageTrack.className = 'image-track';
     x = 0;
     y = 0;
-    console.log('over');
+    console.log('over'); 
   })
 
 
@@ -80,3 +86,4 @@ imageTrack.addEventListener('mousedown', function (e) { //step 1 is right here
 
 
 })
+

@@ -55,11 +55,9 @@ video {
   display: flex;
   gap: 2rem;
   box-sizing: border-box;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
-.yessir {
-  transform: matrix(1, 0, 0, 1, lemon, 0)
-}
 
 img {
   cursor: pointer;
